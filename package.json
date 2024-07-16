@@ -4,10 +4,10 @@
   "description": "Second project(Hexlet)",
   "main": "gendiff.js",
   "bin":{
-    "gendiff": "node gendiff.js"
+    "gendiff": "./gendiff.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node gendiff.js"
   },
   "repository": {
     "type": "git",
