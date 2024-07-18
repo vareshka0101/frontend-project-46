@@ -1,0 +1,27 @@
+    name: CodeClimate
+
+    on: [push]
+
+    jobs:
+      test:
+        runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: Install dependencies
+      run: npm install
+    - name: Run tests
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      run: |
+        npm test -- --coverage
+        npm install -g codeclimate-test-reporter
+        codeclimate-test-reporter &lt; coverage/lcov.info
+
+
+
+
