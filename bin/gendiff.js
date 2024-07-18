@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { Command } from 'commander';
-import { genDiff } from '../parsers.js';
+import  { genDiff} from '../src/parsers.js';
 
 const program = new Command();
 
